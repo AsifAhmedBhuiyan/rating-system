@@ -6,7 +6,7 @@ Welcome to my project.
 ### Demo
 
 
-Click [here](https://asifahmedbhuiyan.github.io/gallery/) to test the application
+Click [here](https://asifahmedbhuiyan.github.io/rating-system/) to test the application
 
 
 <br/>
