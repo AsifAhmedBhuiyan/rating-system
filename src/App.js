@@ -7,7 +7,7 @@ function App() {
   const [selectedRating, setSelectedRating] = useState(0);
 
   const handleOpenDialog = (event) => {
-    event.preventDefault(); // Prevent button from navigating to a new page
+    event.preventDefault(); 
     setSelectedRating(0);
     setDialogOpen(true);
   };
