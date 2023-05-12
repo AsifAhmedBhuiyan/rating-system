@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import StarRating from './components/StarRating';
+import Dialog from './components/Dialog';
 
 function App() {
+  const [isDialogOpen, setDialogOpen] = useState(false);
+  const [selectedRating, setSelectedRating] = useState(0);
+
+  const handleOpenDialog = () => {
+    setDialogOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setDialogOpen(false);
+  };
+
+  const handleRatingChange = (rating) => {
+    setSelectedRating(rating);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <StarRating selectedRating={selectedRating} onRatingChange={handleRatingChange} />
+      {isDialogOpen && <Dialog onClose={handleCloseDialog} />} {/* Render Dialog conditionally */}
+      <button onClick={handleOpenDialog}>Open Dialog</button> {/* Button to open the dialog */}
     </div>
   );
 }
