@@ -6,7 +6,9 @@ function App() {
   const [isDialogOpen, setDialogOpen] = useState(false);
   const [selectedRating, setSelectedRating] = useState(0);
 
-  const handleOpenDialog = () => {
+  const handleOpenDialog = (event) => {
+    event.preventDefault(); // Prevent button from navigating to a new page
+    setSelectedRating(0);
     setDialogOpen(true);
   };
 
@@ -20,11 +22,19 @@ function App() {
 
   return (
     <div className="App">
-      <StarRating selectedRating={selectedRating} onRatingChange={handleRatingChange} />
-      {isDialogOpen && <Dialog onClose={handleCloseDialog} />} {/* Render Dialog conditionally */}
-      <button onClick={handleOpenDialog}>Open Dialog</button> {/* Button to open the dialog */}
+      {!isDialogOpen && (
+        <div>
+          <StarRating selectedRating={selectedRating} onRatingChange={handleRatingChange} />
+          <button onClick={handleOpenDialog}>Open Dialog</button>
+        </div>
+      )}
+      {isDialogOpen && (
+        <Dialog onClose={handleCloseDialog} />
+      )}
     </div>
   );
 }
 
 export default App;
+
+
