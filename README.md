@@ -1,6 +1,6 @@
-# Hello there
+# Welcome
 
-Welcome to my project. 
+Hello, world. I am Asif, a Software developer.
 # Rating System React Application
 
 This project is a React application that lets users rate items using a star rating system and interact with a dialog box. The project is structured around components and props to create a dynamic and engaging user experience.
